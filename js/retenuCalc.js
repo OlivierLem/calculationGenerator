@@ -1,4 +1,4 @@
-export const retenueCalc= (opérateur="+",...nombres) => {
+export const retenueCalc= (opérateur,...nombres) => {
     let nombre=[]             //Tableaux à 2 dimension vide (si l'opérateur est - on ne récupére pas le premier nombre)      
     let chiffre =[]
     let firstNombre = []      // pour la soustraction récupére juste le premier nombre
@@ -94,5 +94,9 @@ export const retenueCalc= (opérateur="+",...nombres) => {
         }
         
     }
-    
+}
+export const randNumber= (min,max) =>{
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +1)) + min;
 }
