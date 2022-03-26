@@ -1,4 +1,4 @@
-import { retenueCalc, randNumber } from "./retenuCalc.js";
+import { retenueCalc, randNumber } from "./fonctionUtilitaire.js";
 
 const reduct = document.querySelector('.arrow ')
 const generateCalc =document.querySelector('.generateurCalcul')
