@@ -163,12 +163,12 @@ btnGenerate.addEventListener('click',function (e){
         operateur='-'
         titre.textContent='Soustraction'
     }
-    for(let i=0; i < buttonsRadio.length; i++){
-        if(buttonsRadio[i].checked == true){
+
+    //Etat de la retenu (0: avec, 1: sans, 2: les 2)
+    for(let i=0; i < buttonsRadio.length; i++)
+        if(buttonsRadio[i].checked == true)
             retenueState = i
-            console.log(retenueState);
-        }
-    }
+     
         
     //créer le calcul
     for(let i=0; i<inputCalc.value; i++){
