@@ -112,7 +112,7 @@ const generateCalc =document.querySelector('.generateurCalcul')
 reduct.addEventListener('click',function(){
 
     /* reduct switch entre la class active et inactive
-    /* cache ou non le contenu du formulaire */
+    /* il cache ou non le contenu du formulaire */
     if(this.classList.contains('active')===true){
         this.classList.add('inactive')
         this.classList.remove('active')
@@ -127,12 +127,14 @@ reduct.addEventListener('click',function(){
     //console.log(this.className);
 })
 
-let contentCalc= document.querySelector('.contentCalc')
+const contentCalc= document.querySelector('.contentCalc')
+const titre=document.querySelector('header > h1')
 
 const nChiffre= document.querySelector('#chiffre')
 const nNombre= document.querySelector('#nombre')
-const nameOperateur= document.querySelector('#operateur')
+const inputOperateur= document.querySelector('#operateur')
 const btnGenerate= document.querySelector('#btnGenerate')
+const btnRemove= document.querySelector('#btnRemove')
 const inputCalc= document.querySelector('#nCalc')
 
 //event pour n'écrire que des chiffres
@@ -144,7 +146,6 @@ inputCalc.addEventListener('keypress', (event) =>{
 let nombres=[]
 
 
-let titre=document.querySelector('header > h1')
 let operateur=""
 
 const buttonsRadio= document.querySelectorAll("input[name='retenue']")
@@ -154,11 +155,11 @@ let retenueBool=false       //false:pas de retenue, true: retenue
 btnGenerate.addEventListener('click',function (e){
     e.preventDefault()
 
-    if(nameOperateur.selectedIndex===0){
+    if(inputOperateur.selectedIndex===0){
         operateur='+'
         titre.textContent='Addition'
     } 
-    else if(nameOperateur.selectedIndex===1){
+    else if(inputOperateur.selectedIndex===1){
         operateur='-'
         titre.textContent='Soustraction'
     }
@@ -243,6 +244,12 @@ btnGenerate.addEventListener('click',function (e){
         contentCalc.appendChild(calcul)
     }
 })
+btnRemove.addEventListener('click', function(){
+    contentCalc.innerHTML= ""
+    titre.innerHTML=""
+    console.log(contentCalc + " " + titre);
+})
+
 const pdfContent = document.querySelector('.pdfContent')
 const btnPdf = document.querySelector('#btnPdf')
 const body=document.body

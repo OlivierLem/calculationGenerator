@@ -506,25 +506,6 @@ header h1 {
 .generateurCalcul span:last-of-type {
   margin-bottom: 0.5rem;
 }
-.generateurCalcul button {
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  width: fit-content;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  background-color: var(--primary);
-  color: #fff;
-  box-shadow: 4px 4px 15px #2aba77, -4px -4px 15px #38fca1;
-  transition: background ease-in 0.15s, box-shadow ease-in-out 0.15s;
-}
-.generateurCalcul button:hover {
-  background: linear-gradient(145deg, #2cc57e, #34ea96);
-}
-.generateurCalcul button:active {
-  background-color: var(--primary);
-  box-shadow: inset 3px 3px 15px #2aba77, inset -3px -3px 15px #38fca1;
-}
 .generateurCalcul span.contentRetenu {
   vertical-align: center;
 }
@@ -564,6 +545,23 @@ header h1 {
 }
 .generateurCalcul .spanBtn-radio label {
   margin-right: 1.5rem;
+}
+.generateurCalcul button {
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  width: fit-content;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  background-color: var(--secondary);
+  color: #000;
+  transition: background ease-in 0.15s;
+}
+.generateurCalcul button:hover {
+  background-color: #f4e502;
+}
+.generateurCalcul button:active {
+  background-color: var(--primary);
 }
 
 /*# sourceMappingURL=style.css.map */

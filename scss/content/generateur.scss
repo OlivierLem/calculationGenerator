@@ -72,28 +72,6 @@
     & span:last-of-type{
         margin-bottom: .5rem;
     }
-    & button{
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        width: fit-content;
-        border: none;
-        border-radius: .5rem;
-        font-weight: 700;
-        background-color: $primary;
-        color: #fff;
-        box-shadow:  4px 4px 15px #2aba77,
-                    -4px -4px 15px #38fca1;
-        transition: background ease-in 0.15s, 
-                    box-shadow ease-in-out .15s;
-        &:hover{
-            background: linear-gradient(145deg, #2cc57e, #34ea96);
-        }            
-        &:active{
-            background-color: $primary;
-            box-shadow: inset 3px 3px 15px #2aba77,
-            inset -3px -3px 15px #38fca1;
-        }
-    }
     span.contentRetenu{
         vertical-align: center;
     }
@@ -132,6 +110,24 @@
         }
         & label{
             margin-right: 1.5rem;
+        }
+    }
+    & button{
+        margin: 0 1rem;
+        padding: 1rem 2rem;
+        width: fit-content;
+        border: none;
+        border-radius: .5rem;
+        font-weight: 700;
+        background-color: $secondary;
+        color: #000;
+        transition: background ease-in 0.15s;
+        &:hover{
+            background-color: darken($secondarySass,5);
+        }            
+        &:active{
+            background-color: $primary;
+            
         }
     }
 }
