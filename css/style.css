@@ -381,21 +381,27 @@ header {
 header p {
   font-weight: 600;
 }
-header h1 {
+
+/* container */
+.worksheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 3rem auto 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.worksheet h2 {
   color: #ba4edb;
   font-weight: bold;
 }
 
-/* container */
 .contentCalc {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
-  margin: 3rem auto 0;
-  font-size: 1.7rem;
-  font-weight: bold;
 }
 
 .calcul {

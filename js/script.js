@@ -103,11 +103,8 @@ const retenueCalc= (opérateur="+",...nombres) => {
     
 }
 
-
 const reduct = document.querySelector('.arrow ')
 const generateCalc =document.querySelector('.generateurCalcul')
-
-
 
 reduct.addEventListener('click',function(){
 
@@ -127,14 +124,6 @@ reduct.addEventListener('click',function(){
     //console.log(this.className);
 })
 
-const contentCalc= document.querySelector('.contentCalc')
-const titre=document.querySelector('header > h1')
-
-const nChiffre= document.querySelector('#chiffre')
-const nNombre= document.querySelector('#nombre')
-const inputOperateur= document.querySelector('#operateur')
-const btnGenerate= document.querySelector('#btnGenerate')
-const btnRemove= document.querySelector('#btnRemove')
 const inputCalc= document.querySelector('#nCalc')
 
 //event pour n'écrire que des chiffres
@@ -143,6 +132,16 @@ inputCalc.addEventListener('keypress', (event) =>{
         event.preventDefault()
 })
 
+const worksheet= document.querySelector('.worksheet')
+const mainTitre=document.querySelector('header > h1')
+
+const nChiffre= document.querySelector('#chiffre')
+const nNombre= document.querySelector('#nombre')
+const inputOperateur= document.querySelector('#operateur')
+const btnGenerate= document.querySelector('#btnGenerate')
+const btnRemove= document.querySelector('#btnRemove')
+
+
 let nombres=[]
 
 
@@ -150,26 +149,44 @@ let operateur=""
 
 const buttonsRadio= document.querySelectorAll("input[name='retenue']")
 let retenueState= 0       //0:avec retenue, 1:sans, 2:mix
-let retenueBool=false       //false:pas de retenue, true: retenue
 
+let retenueBool=false       //false:pas de retenue, true: retenue
+let lastOperator=undefined
+let nameTitle = ""
 btnGenerate.addEventListener('click',function (e){
     e.preventDefault()
 
+    const titres= document.createElement('h2')
+    lastOperator= operateur
+
+    const contentCalcCreate= document.createElement('div')
+    contentCalcCreate.classList.add("contentCalc")
+    contentCalcCreate.setAttribute('id', 'currentCalc')
+    worksheet.appendChild(contentCalcCreate)
+
+    const contentCalc= document.querySelector("#currentCalc")
+
     if(inputOperateur.selectedIndex===0){
         operateur='+'
-        titre.textContent='Addition'
+        nameTitle='Addition'
     } 
     else if(inputOperateur.selectedIndex===1){
         operateur='-'
-        titre.textContent='Soustraction'
+        nameTitle='Soustraction'
     }
+    if(lastOperator != undefined)
+        if(lastOperator !== operateur)
+               titres.textContent= nameTitle;
+
+    worksheet.appendChild(titres)
+    worksheet.appendChild(contentCalcCreate)
 
     //Etat de la retenu (0: avec, 1: sans, 2: les 2)
     for(let i=0; i < buttonsRadio.length; i++)
         if(buttonsRadio[i].checked == true)
             retenueState = i
      
-        
+    
     //créer le calcul
     for(let i=0; i<inputCalc.value; i++){
         let calcul=document.createElement('div')
@@ -238,11 +255,10 @@ btnGenerate.addEventListener('click',function (e){
         nombres=[] 
         contentCalc.appendChild(calcul)
     }
+    contentCalc.removeAttribute('id')
 })
 btnRemove.addEventListener('click', function(){
-    contentCalc.innerHTML= ""
-    titre.innerHTML=""
-    console.log(contentCalc + " " + titre);
+    worksheet.innerHTML= ""
 })
 
 const pdfContent = document.querySelector('.pdfContent')
