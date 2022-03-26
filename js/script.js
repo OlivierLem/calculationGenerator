@@ -164,14 +164,9 @@ btnGenerate.addEventListener('click',function (e){
         titre.textContent='Soustraction'
     }
     for(let i=0; i < buttonsRadio.length; i++){
-        if(buttonsRadio[0].checked == true){
-            retenueState = 0
-        }
-        else if(buttonsRadio[1].checked == true){
-            retenueState = 1
-        }
-        else{
-            retenueState = 2
+        if(buttonsRadio[i].checked == true){
+            retenueState = i
+            console.log(retenueState);
         }
     }
         
