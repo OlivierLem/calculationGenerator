@@ -1,0 +1,47 @@
+/* container */
+
+.contentCalc{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: 3rem auto 0;
+    font-size: 1.7rem;
+    font-weight: bold;  
+}
+.calcul{
+    width: fit-content;
+    padding-left: 1rem;
+    margin: 0 1.2rem;
+    margin-bottom: 0rem;
+    text-align: right;
+    line-height: 1rem;
+    letter-spacing: 1.5rem;
+    & p{
+        position: relative;
+    }
+    & p:last-of-type{
+        margin-top: -.5rem;
+        padding: 1.5rem 0;
+        padding-left: 10rem;
+        border-top: solid 2px #000;
+        /* & span{
+            position: absolute;
+            height: 3rem;
+            top: -2px;
+            left: -1.5rem;
+             padding-top: 3.2rem;
+            padding-left: 1rem;
+            border-top: solid 2px #000;
+        } */
+        & .invisible{
+            display: none;
+         }
+    }
+    & p span{
+        
+        top: 40%;
+        left: -3rem;
+    }
+}

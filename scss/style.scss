@@ -1,0 +1,18 @@
+@import "libs/variable.scss";
+@import "normalize.scss";
+
+body, html{
+    font-size: 62.5%;
+}
+body{
+    font-family: arial,helvetica,sans-serif;
+    /* background-color: #555;
+    color: #fff; */
+}
+
+@import "libs/keyframes.scss";
+
+@import "content/header.scss";
+@import "content/container.scss";
+@import "content/generateur.scss";
+

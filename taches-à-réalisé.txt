@@ -1,0 +1,10 @@
+Dimension 796*1024
+
+- affiché un nombre de calcul suffisant pour remplir 1 page peut importe les nombre et chiffres dans le  calcul
+
+- affiché une option pour choisir le nombre de page de calcul que l'on souhaite
+
+- modifié l'option pour réduire le formulaire gardé uniquement le lien
+
+- optimisé l'option de retenue
+- bug fonction retenuCalc (si un nombre n'a qu'1 chiffre résultat undefined)
