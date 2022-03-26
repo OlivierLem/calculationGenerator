@@ -175,10 +175,11 @@ btnGenerate.addEventListener('click',function (e){
         nameTitle='Soustraction'
     }
     if(lastOperator != undefined)
-        if(lastOperator !== operateur)
-               titres.textContent= nameTitle;
+        if(lastOperator !== operateur){
+            titres.textContent= nameTitle;
+            worksheet.appendChild(titres)
+        }
 
-    worksheet.appendChild(titres)
     worksheet.appendChild(contentCalcCreate)
 
     //Etat de la retenu (0: avec, 1: sans, 2: les 2)
