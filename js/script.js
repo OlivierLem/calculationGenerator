@@ -69,11 +69,7 @@ btnGenerate.addEventListener('click',function (e){
     }
     const contentCalcCreate= document.createElement('div')
     contentCalcCreate.classList.add("contentCalc")
-    contentCalcCreate.setAttribute('id', 'currentCalc')
-    
-   
     worksheet.appendChild(contentCalcCreate)
-    const contentCalc= document.querySelector("#currentCalc")
 
     //Etat de la retenu (0: avec, 1: sans, 2: les 2)
     for(let i=0; i < buttonsRadio.length; i++)
@@ -143,10 +139,8 @@ btnGenerate.addEventListener('click',function (e){
         }
 
         nombres=[] 
-        contentCalc.appendChild(calcul)
+        worksheet.lastChild.appendChild(calcul)
     }
-
-    contentCalc.removeAttribute('id')
 })
 
 btnRemove.addEventListener('click', () =>  worksheet.innerHTML= "")
