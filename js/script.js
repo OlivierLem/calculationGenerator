@@ -67,9 +67,9 @@ btnGenerate.addEventListener('click',function (e){
             worksheet.appendChild(titres)
         }
     }
-    const contentCalcCreate= document.createElement('div')
-    contentCalcCreate.classList.add("contentCalc")
-    worksheet.appendChild(contentCalcCreate)
+    const contentCalcCurrent= document.createElement('div')
+    contentCalcCurrent.classList.add("contentCalc")
+    worksheet.appendChild(contentCalcCurrent)
 
     //Etat de la retenu (0: avec, 1: sans, 2: les 2)
     for(let i=0; i < buttonsRadio.length; i++)
