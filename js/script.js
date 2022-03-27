@@ -6,7 +6,7 @@ const generateCalc =document.querySelector('.generateurCalcul')
 reduct.addEventListener('click',function(){
 
     /* reduct switch entre la class active et inactive
-    /* il cache ou non le contenu du formulaire */
+     * il cache ou non le contenu du formulaire */
     if(this.classList.contains('active')===true){
         this.classList.add('inactive')
         this.classList.remove('active')
@@ -52,14 +52,7 @@ btnGenerate.addEventListener('click',function (e){
 
     const titres= document.createElement('h2')
     lastOperator= operateur
-
-    const contentCalcCreate= document.createElement('div')
-    contentCalcCreate.classList.add("contentCalc")
-    contentCalcCreate.setAttribute('id', 'currentCalc')
-    worksheet.appendChild(contentCalcCreate)
-
-    const contentCalc= document.querySelector("#currentCalc")
-
+    
     if(inputOperateur.selectedIndex===0){
         operateur='+'
         nameTitle='Addition'
@@ -68,13 +61,19 @@ btnGenerate.addEventListener('click',function (e){
         operateur='-'
         nameTitle='Soustraction'
     }
-    if(lastOperator != undefined)
+    if(lastOperator != undefined){
         if(lastOperator !== operateur){
             titres.textContent= nameTitle;
             worksheet.appendChild(titres)
         }
-
+    }
+    const contentCalcCreate= document.createElement('div')
+    contentCalcCreate.classList.add("contentCalc")
+    contentCalcCreate.setAttribute('id', 'currentCalc')
+    
+   
     worksheet.appendChild(contentCalcCreate)
+    const contentCalc= document.querySelector("#currentCalc")
 
     //Etat de la retenu (0: avec, 1: sans, 2: les 2)
     for(let i=0; i < buttonsRadio.length; i++)
