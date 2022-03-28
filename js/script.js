@@ -1,11 +1,11 @@
 //import { retenueCalc, randNumber } from "./fonctionUtilitaire.js";
 
-const reduct = document.querySelector('.arrow ')
+const buttonReduc = document.querySelector('.arrow ')
 const generateCalc =document.querySelector('.generateurCalcul')
 
-reduct.addEventListener('click',function(){
+buttonReduc.addEventListener('click',function(){
 
-    /* reduct switch entre la class active et inactive
+    /* buttonReduc switch entre la class active et inactive
      * il cache ou non le contenu du formulaire */
     if(this.classList.contains('active')===true){
         this.classList.add('inactive')
@@ -36,8 +36,6 @@ const nChiffre= document.querySelector('#chiffre')
 const nNombre= document.querySelector('#nombre')
 const inputOperateur= document.querySelector('#operateur')
 const btnGenerate= document.querySelector('#btnGenerate')
-const btnRemove= document.querySelector('#btnRemove')
-
 let nombres=[]
 let operateur=""
 let lastOperator=undefined
@@ -47,12 +45,15 @@ let retenueState= 0       //0:avec retenue, 1:sans, 2:mix
 let retenueBool=false       //false:pas de retenue, true: retenue
 
 let nameTitle = ""
+ 
+//setInterval(() => console.log(typeof lastOperator),1000)
+
 btnGenerate.addEventListener('click',function (e){
     e.preventDefault()
 
+
     const titres= document.createElement('h2')
-    lastOperator= operateur
-    
+    lastOperator= operateur ? operateur : undefined;
     if(inputOperateur.selectedIndex===0){
         operateur='+'
         nameTitle='Addition'
@@ -61,12 +62,11 @@ btnGenerate.addEventListener('click',function (e){
         operateur='-'
         nameTitle='Soustraction'
     }
-    if(lastOperator != undefined){
-        if(lastOperator !== operateur){
-            titres.textContent= nameTitle;
-            worksheet.appendChild(titres)
-        }
+    if(lastOperator ===undefined || lastOperator !== operateur ){
+        titres.textContent= nameTitle;
+        worksheet.appendChild(titres)
     }
+    
     const contentCalcCurrent= document.createElement('div')
     contentCalcCurrent.classList.add("contentCalc")
     worksheet.appendChild(contentCalcCurrent)
@@ -143,7 +143,13 @@ btnGenerate.addEventListener('click',function (e){
     }
 })
 
-btnRemove.addEventListener('click', () =>  worksheet.innerHTML= "")
+const btnRemove= document.querySelector('#btnRemove')
+btnRemove.addEventListener('click', () => {
+// on reset ces variables 
+    worksheet.innerHTML= ""
+    lastOperator = undefined
+    operateur = undefined      
+})
 
 const pdfContent = document.querySelector('.pdfContent')
 const btnPdf = document.querySelector('#btnPdf')

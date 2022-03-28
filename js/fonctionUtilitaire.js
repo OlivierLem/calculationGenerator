@@ -61,20 +61,18 @@
                 }
               if(opérateur === "+"){
                     if(nombre[i].length === 1 && test < 10){
-                        console.log("pas de retenue dans le calcul");   
+                        //console.log("pas de retenue dans le calcul");   
                         return false                // la somme des nombres ne possédent pas de retenue on return false
                     } else if(test>=10){
-                        console.log("retenue dans le calcul");   
+                        //console.log("retenue dans le calcul");   
                         return true                  // la somme des nombres possédent au moins une  retenue on return true
                     }
               } else if(opérateur === "-" ){
                     if(nombre[i].length === 1 && test <= testFirstNombre){
-                        //console.log(testFirstNombre+ " - "+test);
-                        console.log("pas de retenue dans le calcul");       
+                        //console.log("pas de retenue dans le calcul");       
                         return false
                     } else if(test > testFirstNombre){
-                        //console.log(testFirstNombre+ " - "+test);
-                        console.log("il y a une retenue dans le calcul");
+                        //console.log("il y a une retenue dans le calcul");
                         return true
                     }
               }
@@ -93,8 +91,8 @@
         } else if(opérateur ==="-"){
             if(test <= testFirstNombre && (nombre.length-1) == i){
                 testLine++  
-            /*     console.log(testFirstNombre+ " - "+test);
-                console.log("pas de retenu dans la colonne " + testLine); */
+                console.log(testFirstNombre+ " - "+test);
+                console.log("pas de retenu dans la colonne " + testLine);
                 i=-1
                 test=0 
             }
