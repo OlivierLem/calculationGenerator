@@ -1,4 +1,5 @@
-/* export */ const retenueCalc= (opérateur,...nombres) => {
+// la fonction return false: pas de retenue dans le calcul, true: retenue dans le calcul, 'négatif': donne un nombre négatif 
+/*export*/ const retenueCalc= (opérateur,...nombres) => {
     let nombre=[]             //Tableaux à 2 dimension vide (si l'opérateur est - on ne récupére pas le premier nombre)      
     let chiffre =[]
     let firstNombre = []      // pour la soustraction récupére juste le premier nombre
@@ -16,14 +17,20 @@
        nombre.sort()    
 
     } else if(opérateur==="-"){
+        let sommeNumber = 0
         for(let i=0; i < nombres.length; i++){
             if(i===0){
                 firstNombre=nombres[i].toString().split('').map(returnInt).reverse();
             }else{
+                sommeNumber += nombres[i] //somme de tout les nombre sauf le premier
                 let chiffre=nombres[i].toString().split('').map(returnInt);
                 nombre.push(chiffre.reverse())
-            }
-           
+            }     
+       }
+       //on vérifie si le résulat nous rend un nombre négatif
+       if(nombres[0]<sommeNumber){
+           console.log('nombre négatif');
+           return 'négatif'
        }
     }
        
@@ -34,13 +41,13 @@
 
     for(let i=0; i < nombre.length;i++){
     if(addZero ===1)
-        addZero = nombre.length
+        addZero == nombre.length
     else
-        addZero =undefined      // supression de la variable
+        delete(addZero)      // supression de la variable
 
         test+= nombre[i].shift() // on fait la somme des premier éléments des tableaux
         testFirstNombre = firstNombre[testLine]
-
+    
         if(firstNombre.length < nombre[0].length){
             firstNombre.push(0)         // on rajoute des 0 à firstNombre pour qu'il est autant de chiffres que les autres nombres
         }
@@ -60,7 +67,7 @@
                         console.log("retenue dans le calcul");   
                         return true                  // la somme des nombres possédent au moins une  retenue on return true
                     }
-              } else if(opérateur === "-"){
+              } else if(opérateur === "-" ){
                     if(nombre[i].length === 1 && test <= testFirstNombre){
                         //console.log(testFirstNombre+ " - "+test);
                         console.log("pas de retenue dans le calcul");       
@@ -86,15 +93,17 @@
         } else if(opérateur ==="-"){
             if(test <= testFirstNombre && (nombre.length-1) == i){
                 testLine++  
-                //console.log(testFirstNombre+ " - "+test);
-                //console.log("pas de retenu dans la colonne " + testLine);
+            /*     console.log(testFirstNombre+ " - "+test);
+                console.log("pas de retenu dans la colonne " + testLine); */
                 i=-1
                 test=0 
             }
         }
         
     }
+    
 }
+
 /* export */ const randNumber= (min,max) =>{
     min = Math.ceil(min);
     max = Math.floor(max);
