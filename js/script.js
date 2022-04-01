@@ -24,9 +24,12 @@ buttonReduc.addEventListener('click',function(){
 const inputCalc= document.querySelector('#nCalc')
 
 //event pour n'écrire que des chiffres
-inputCalc.addEventListener('keypress', (event) =>{
-    if(event.keyCode < 48 || event.keyCode > 57) 
-        event.preventDefault()
+inputCalc.addEventListener('keydown', (event) =>{
+    console.log(event.keyCode);
+    if(event.keyCode < 96 || event.keyCode > 105) 
+        if(event.keyCode!==8 && event.keyCode!==46)
+            event.preventDefault()
+        
 })
 
 const worksheet= document.querySelector('.worksheet')
