@@ -27,7 +27,7 @@ const inputCalc= document.querySelector('#nCalc')
 inputCalc.addEventListener('keydown', (event) =>{
     console.log(event.keyCode);
     if(event.keyCode < 96 || event.keyCode > 105) 
-        if(event.keyCode!==8 && event.keyCode!==46)
+        if((event.keyCode < 8 || event.keyCode > 9) && event.keyCode !== 46)
             event.preventDefault()
         
 })
