@@ -25,11 +25,9 @@ const inputCalc= document.querySelector('#nCalc')
 
 //event pour n'écrire que des chiffres
 inputCalc.addEventListener('keydown', (event) =>{
-    console.log(event.keyCode);
     if(event.keyCode < 96 || event.keyCode > 105) 
-        if((event.keyCode < 8 || event.keyCode > 9) && event.keyCode !== 46)
+        if((event.keyCode < 8 || event.keyCode > 9) && event.keyCode!==46)
             event.preventDefault()
-        
 })
 
 const worksheet= document.querySelector('.worksheet')
@@ -54,9 +52,9 @@ let nameTitle = ""
 btnGenerate.addEventListener('click',function (e){
     e.preventDefault()
 
-
     const titres= document.createElement('h2')
     lastOperator= operateur ? operateur : undefined;
+
     if(inputOperateur.selectedIndex===0){
         operateur='+'
         nameTitle='Addition'
@@ -113,14 +111,11 @@ btnGenerate.addEventListener('click',function (e){
             if((nNombre.value-1)===n){
                 //console.log(nombres);
                 retenueBool= retenueCalc(operateur, ...nombres)
-                //console.log(retenueBool);       
-                if(retenueState===0 && retenueBool != true){
+                console.log(retenueBool);       
+                if((retenueState===0 && retenueBool != true) || (retenueState===1 && retenueBool != false) || retenueBool ==='négatif'){
                     n=-1
                     nombres=[]
-                } else if(retenueState===1 && retenueBool != false){
-                    n=-1
-                    nombres=[]
-                }          
+                }   
             }
         }
 
