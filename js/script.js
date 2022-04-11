@@ -151,8 +151,14 @@ btnRemove.addEventListener('click', () => {
 
 const pdfContent = document.querySelector('.pdfContent')
 const btnPdf = document.querySelector('#btnPdf')
-btnPdf.addEventListener('click',function(){
-    console.log('ici');
+
+btnPdf.addEventListener('click',() =>{
+    
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"smooth"
+    })
     pdfContent.classList.add('active')
     html2pdf().from(pdfContent).save()
 })
