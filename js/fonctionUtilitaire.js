@@ -29,7 +29,7 @@
        }
        //on vérifie si le résulat nous rend un nombre négatif
        if(nombres[0]<sommeNumber){
-           console.log('nombre négatif');
+           /* console.log('nombre négatif'); */
            return 'négatif'
        }
     }
@@ -54,14 +54,15 @@
         
         for(let j=0; j< nombre[i].length; j++){
                 
-                if(nombre[i].length<(nombre[0].length || firstNombre.length)){
-                    nombre[i].push(0)                   // pour que tout les tableaux est la même taille on rajoute des 0 au tableaux
-                } else if(nombre[i].length === nombre[0].length && addZero > 0){
-                    nombre[i].push(0)                   // on ajoute des 0 à la fin de chaque tableaux pour qu'il ne soit pas vidé
-                    nombre[i].push(0)
-                    addZero--
-                } 
-              if(opérateur === "+"){  //bug ici si il n'y a pas de re\\
+                
+              if(opérateur === "+"){  //bug ici si il n'y a pas de retenue\\
+                    if(nombre[i].length<(nombre[0].length || firstNombre.length)){
+                        nombre[i].push(0)                   // pour que tout les tableaux est la même taille on rajoute des 0 au tableaux
+                    } else if(nombre[i].length === nombre[0].length && addZero > 0){
+                        nombre[i].push(0,0)                   // on ajoute des 0 à la fin de chaque tableaux pour qu'il ne soit pas vidé
+                        addZero--
+                    }
+                    
                     if(nombre[i].length === 1 && test < 10){
                         //console.log("pas de retenue dans le calcul");   
                         return false                // la somme des nombres ne possédent pas de retenue on return false
@@ -94,8 +95,8 @@
         } else if(opérateur ==="-"){
             if(test <= testFirstNombre && (nombre.length-1) == i){
                 testLine++  
-                console.log(testFirstNombre+ " - "+test);
-                console.log("pas de retenu dans la colonne " + testLine);
+                /* console.log(testFirstNombre+ " - "+test);
+                console.log("pas de retenu dans la colonne " + testLine); */
                 i=-1
                 test=0 
             }
