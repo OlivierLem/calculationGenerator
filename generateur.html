@@ -1,86 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    
-    <script src="https://kit.fontawesome.com/3f1c5e95ca.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="css/style.css">
-    
-</head>
-<body>
+
+    <script
+      src="https://kit.fontawesome.com/3f1c5e95ca.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
     <span class="pdfContent">
-        <header>
-            <p>Date: ____________</p>
-        </header>
-        <div class="worksheet">
-        </div>
+      <header>
+        <p class=".date">Date: ____________</p>
+      </header>
+      <div class="worksheet"></div>
     </span>
-    
-    
+
     <div class="generateurCalcul">
-        
-        <a class="arrow inactive"><i class="fa-solid fa-angle-down"></i></a>
-        
-        <p class="headForm "> Générer vos calcul</p>
-        <span>
-            <label for="nCalc">Nombre de calcul:</label>
-            <input type="text" name="nCalc" id="nCalc" value="0" maxlength="2" required>
+      <a class="arrow inactive"><i class="fa-solid fa-angle-down"></i></a>
+      <p class="headForm">Générer vos calcul</p>
+      
+      <span>
+        <label for="nCalc">Nombre de calcul:</label>
+        <input
+          type="text"
+          name="nCalc"
+          id="nCalc"
+          value="0"
+          maxlength="2"
+          required
+        />
+      </span>
+      <span>
+        <label for="opérateur">Type de calcul: </label>
+        <select name="operateur" id="operateur">
+          <option value="addition" selected>addition</option>
+          <option value="soustraction">soustraction</option>
+        </select>
+      </span>
+      <span>
+        <label for="chiffre">Nombre de chiffre: </label>
+        <select name="chiffre" id="chiffre">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </span>
+      <span>
+        <label for="nombre">Nombre de Nombre: </label>
+        <select name="nombre" id="nombre">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </span>
+      <span class="contentRetenu">
+        <label>Retenue: </label>
+        <span class="spanBtn-radio">
+          <input type="radio" id="avecRetenue" name="retenue" checked />
+          <label for="avecRetenue">avec</label>
+          <input type="radio" id="sansRetenue" name="retenue" />
+          <label for="sansRetenue">sans</label>
+          <input type="radio" id="mixRetenue" name="retenue" />
+          <label for="mixRetenue">les 2</label>
         </span>
-        <span>
-            <label for="opérateur">Type de calcul: </label>
-            <select name="operateur" id="operateur">
-                <option value="addition" selected>addition</option>
-                <option value="soustraction">soustraction</option>
-            </select>
-        </span>
-        <span>
-            <label for="chiffre">Nombre de chiffre: </label>
-            <select name="chiffre" id="chiffre">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-        </span>
-        <span>
-            <label for="nombre">Nombre de Nombre: </label>
-            <select name="nombre" id="nombre">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-        </span>
-        <span class="contentRetenu">
-            <label>Retenue: </label>
-            <span class="spanBtn-radio">
-                <input type="radio" id="avecRetenue"name="retenue" checked>
-                <label for="avecRetenue">avec</label>
-                <input type="radio" id="sansRetenue"name="retenue">
-                <label for="sansRetenue">sans</label>
-                <input type="radio" id="mixRetenue"name="retenue">
-                <label for="mixRetenue">les 2</label>
-            </span>
-        </span>
-        <span>
-            <button type="submit" id="btnPdf">Créer Pdf</button>
-            <button id="btnGenerate">Générer</button>
-            <button id="btnRemove">Supprimer</button>
-        </span>
-       
+      </span>
+      <span>
+        <button type="submit" id="btnPdf">Créer Pdf</button>
+        <button id="btnGenerate">Générer</button>
+        <button id="btnRemove">Supprimer</button>
+      </span>
     </div>
     <script type="text/javascript" src="js/fonctionUtilitaire.js"></script>
+    <script type="text/javascript" src="js/functionReduct.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <!-- <script type="module" src="js/script.js"></script> -->
-</body>
+  </body>
 </html>
