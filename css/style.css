@@ -342,14 +342,15 @@ template {
   display: none;
 }
 
-body, html {
+body,
+html {
   font-size: 62.5%;
 }
 
 body {
   font-family: arial, helvetica, sans-serif;
   /* background-color: #555;
-  color: #fff; */
+    color: #fff; */
 }
 
 /* keyframes */
@@ -369,8 +370,57 @@ body {
     transform: rotate(0deg);
   }
 }
-/* header */
 header {
+  display: inline-flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-inline: 4.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #20b972;
+}
+
+header div button {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+header div button:hover, header div button.active {
+  color: var(--secondary);
+}
+
+header div {
+  display: inline-flex;
+  align-items: center;
+}
+
+header div p:last-of-type {
+  font-weight: 500;
+  margin-inline: 0.8rem;
+}
+
+header div input {
+  margin-left: 3rem;
+  opacity: 1;
+  color: transparent;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform ease-in-out 0.5s, color ease-in-out 0.15s 0.4s;
+}
+header div input.visible {
+  opacity: 1;
+  color: #333;
+  transform: scaleX(1);
+}
+
+/* header */
+div.info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -378,7 +428,7 @@ header {
   font-size: 2rem;
   margin-left: 5rem;
 }
-header p {
+div.info p {
   font-weight: 600;
 }
 

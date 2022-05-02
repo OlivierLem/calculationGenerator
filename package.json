@@ -1,0 +1,19 @@
+{
+  "name": "calculationgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./scss/style.scss ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlivierLem/calculationGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlivierLem/calculationGenerator/issues"
+  },
+  "homepage": "https://github.com/OlivierLem/calculationGenerator#readme"
+}

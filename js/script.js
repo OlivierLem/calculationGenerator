@@ -126,9 +126,20 @@ btnRemove.addEventListener("click", () => {
   operateur = undefined;
 });
 
+let namePdf = "fiche de calcul";
+const fileName = document.querySelector('.fileName');
+const buttonEditNamePdf = document.querySelector('header > div > button');
+const modifyNamePdf = document.querySelector('#modifyNamePdf');
+modifyNamePdf.value = namePdf;
+
+//Dévoile l'élément input:text pour modifier le noms du fichier pdf
+buttonEditNamePdf.addEventListener('click', function(){
+  this.classList.toggle('active')
+  modifyNamePdf.classList.toggle('visible');
+})
+
 const pdfContent = document.querySelector(".pdfContent");
 const btnPdf = document.querySelector("#btnPdf");
-let namePdf = "fiche de calcul";
 
 /** 
  * ! mettre dans un element section les .contentCalc 
@@ -144,6 +155,14 @@ let optPdf = {
   html2canvas:  { scale: 1, scrollY: 0},
   jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
 };
+
+
+modifyNamePdf.addEventListener('input', function(){
+  fileName.textContent=`${removeExtraSpace(this.value)}.pdf`
+  namePdf=removeExtraSpace(this.value)
+  optPdf.filename=`${removeExtraSpace(this.value)}.pdf`
+  console.log(namePdf);
+})
 
 btnPdf.addEventListener("click", () => {
   pdfContent.classList.add("active");

@@ -1,0 +1,15 @@
+/* header */
+
+div.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    font-size: 2rem;
+    margin-left: 5rem;
+
+    & p{
+        font-weight: 600;
+    }
+   
+}
