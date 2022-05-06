@@ -5,6 +5,9 @@ body,
 html {
   font-size: 62.5%;
 }
+*{
+  box-sizing: border-box;
+}
 body {
   font-family: arial, helvetica, sans-serif;
   /* background-color: #555;

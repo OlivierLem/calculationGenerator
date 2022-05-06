@@ -1,4 +1,7 @@
-//import { retenueCalc, randNumber } from "./fonctionUtilitaire.js";
+import {css} from '../scss/style.scss'
+import { reductElement } from "./fonction/reductElement";
+import { retenueCalc } from "./fonction/retenueCalc";
+import { randNumber, inputNumber, removeExtraSpace } from "./fonction/fonctionUtilitaire";
 
 const buttonReduct = document.querySelector(".arrow ");
 const generateCalc = document.querySelector(".generateurCalcul");
@@ -95,7 +98,7 @@ btnGenerate.addEventListener("click", function (e) {
         }
       }
     }
-
+    
     //la zone des réponses vide pour le calcul
     let videResultat = "";
     for (let i = 0; i < nChiffre.value; i++) {

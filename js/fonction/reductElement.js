@@ -5,7 +5,7 @@
  * @param {buttonElement} button 
  */
 
-/* export */ function reductElement(element, button){
+export function reductElement(element, button){
     button.addEventListener("click", function () {
 
       if (this.classList.contains("active") === true) {

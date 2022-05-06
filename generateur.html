@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script
-      src="https://kit.fontawesome.com/3f1c5e95ca.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/3f1c5e95ca.js" crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
       integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="dist/main.bundle.css" />
   </head>
 
   <body>
@@ -25,7 +22,7 @@
         <p>Nom du fichier: </p>
         <p class="fileName">fiche de calcul.pdf</p>
         <button><i class="fa-solid fa-pen-to-square"></i></button>
-        <input type="text" name="modifyNamePdf" class="visible" id="modifyNamePdf">
+        <input type="text" name="modifyNamePdf" class="" id="modifyNamePdf">
       </div>
     </header>
     <span class="pdfContent">
@@ -98,9 +95,6 @@
         <button id="btnRemove">Supprimer</button>
       </span>
     </div>
-    <script type="text/javascript" src="js/fonctionUtilitaire.js"></script>
-    <script type="text/javascript" src="js/functionReduct.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <!-- <script type="module" src="js/script.js"></script> -->
+    <script type="text/javascript" src="dist/main.bundle.js"></script>
   </body>
 </html>
