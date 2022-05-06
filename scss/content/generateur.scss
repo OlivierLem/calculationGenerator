@@ -52,12 +52,22 @@
     } 
     
     & input#nCalc{
-        width: 7%;
+        width: 10%;
         text-align: center;
         background-color: $secondary;
         border: solid 1px black;
         border-radius: 3px;
     } 
+    input[type=number] { 
+        -moz-appearance: textfield;
+        appearance: textfield;
+        margin: 0; 
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
     & span select{
         margin-left: 5rem;
         padding: .5rem;
