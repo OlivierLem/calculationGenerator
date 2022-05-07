@@ -1,5 +1,5 @@
 /**
- * identifie si un calcul de plusieur nombres à une retenue ou non
+ * * identifie si un calcul de plusieur nombres à une retenue ou non
  * @param {string} opérateur 
  * @param  {...number} nombres 
  * @returns {boolean | string} false: aucune retenue, true: retenue, "négatif": nombre négatif
@@ -12,8 +12,9 @@
     function returnInt(element) {
       return parseInt(element, 10);
     }
-    /* bloucle qui stock le nombre actuelle dans le tableau chiffre
-      /* puis on inverse le tableaux chiffre et on envoie le tableau dans la variable nombre */
+    /*
+     * bloucle qui stock le nombre actuelle dans le tableau chiffre
+     * puis on inverse le tableaux chiffre et on envoie le tableau dans la variable nombre */
     if (opérateur === "+") {
       for (let n of nombres) {
         let chiffre = n.toString().split("").map(returnInt);

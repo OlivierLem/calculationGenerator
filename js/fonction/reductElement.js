@@ -7,7 +7,6 @@
 
 export function reductElement(element, button){
     button.addEventListener("click", function () {
-
       if (this.classList.contains("active") === true) {
         this.classList.add("inactive");
         this.classList.remove("active");

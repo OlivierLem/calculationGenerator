@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack --mode=development",
     "dev-watch": "cross-env NODE_ENV=dev webpack --mode=development --watch",
-    "prod": "webpack --mode=production"
+    "prod": "webpack --mode=production",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "jest": "^28.1.0",
+    "jest-extended": "^2.0.0",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.13",
     "postcss-loader": "^6.2.1",

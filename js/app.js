@@ -1,7 +1,7 @@
 import {css} from '../scss/style.scss'
 import { reductElement } from "./fonction/reductElement";
 import { retenueCalc } from "./fonction/retenueCalc";
-import { randNumber, /* inputNumber, */ removeExtraSpace } from "./fonction/fonctionUtilitaire";
+import { randNumber, removeExtraSpace } from "./fonction/fonctionUtilitaire";
 
 const buttonReduct = document.querySelector(".arrow ");
 const generateCalc = document.querySelector(".generateurCalcul");
@@ -17,13 +17,16 @@ let inputCalc_PreviousValue = 0;
 inputCalc.addEventListener('input', function(event){
   if(this.value.length > this.maxLength)
     this.value = this.value.slice(0, this.maxLength);
-  if(event.data === "e" || event.data === "-" || event.data === "+" || event.data === "*" || event.data === "/" || event.data === "+" || event.data === "." || event.data === ",")
-    this.value = inputCalc_PreviousValue
+    
   if(parseInt(this.value, 10) > 30)
     this.value = 30;
   else if(this.value === 0)
     this.value = 0;
-  inputCalc_PreviousValue = this.value
+
+  if(event.data === "e" || event.data === "-" || event.data === "+" || event.data === "*" || event.data === "/" || event.data === "+" || event.data === "." || event.data === ",")
+    this.value = inputCalc_PreviousValue;
+
+  inputCalc_PreviousValue = this.value;
 })
 
 const nChiffre = document.querySelector("#chiffre");
