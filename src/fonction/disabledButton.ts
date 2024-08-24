@@ -5,6 +5,7 @@ export function toggleDisabledButton() {
   const shadowElement = contentCalcul?.shadowRoot?.children[0] as Element;
   // vérifie si le noms du fichier pdf est défini est si il y'a un élément content-calcul
   // si ce n'est pas le cas alors le bouton pour créer un pdf sera disabled
+  console.log(buttonPdf?.classList.contains('disabled'))
   if (
     typeof shadowElement?.innerHTML === "string" &&
     inputNameFile &&

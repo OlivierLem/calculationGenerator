@@ -297,6 +297,7 @@ export class ContentCalcul extends HTMLElement {
           }
           i--;
         }
+        toggleDisabledButton()
       }
     }
   }

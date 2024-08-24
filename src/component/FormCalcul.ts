@@ -1,4 +1,5 @@
 import { createElement } from "../fonction/createElement";
+import { toggleDisabledButton } from "../fonction/disabledButton";
 import { FormType } from "../types/form";
 
 
@@ -35,5 +36,6 @@ const formValidate = (setting: FormType) => {
     contentCalcul.setAttribute('retenue', setting.retenue)
   }
   worksheet?.appendChild(contentCalcul)
+  toggleDisabledButton()
 };
 
