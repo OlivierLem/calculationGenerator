@@ -1,6 +1,5 @@
 import { createElement } from "../fonction/createElement";
-import { toggleDisabledButton } from "../fonction/disabledButton";
-import { FormType, OperatorType } from "../types/form";
+import { FormType } from "../types/form";
 
 
 const worksheet= document.querySelector<HTMLElement>(".worksheet");
