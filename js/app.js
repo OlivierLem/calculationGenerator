@@ -118,14 +118,15 @@ btnGenerate.addEventListener("click", function (e) {
       videResultat += ""; //paramétre possible ( " ", _ )
     }
 
+    // ! mettre un event pour n'utiliser que des chiffres et limiter le nombre de caratére possible à rentrer
     for (let j = 0; j <= nombres.length; j++) {
       if (j == 0) {
-        calcul.innerHTML += `<p>${nombres[j]}</p>`;
+        calcul.innerHTML += `<p><span contenteditable="true">${nombres[j]}</span></p>`;
       } else if (nombres.length == j) {
         //ligne du résultat, le signe "=" est caché pour le remettre enlever sa class
         calcul.innerHTML += `<p><span class="invisible">=</span> ${videResultat}</p>`;
       } else {
-        calcul.innerHTML += `<p><span>${operateur}</span> ${nombres[j]}</p>`;
+        calcul.innerHTML += `<p><span>${operateur}</span> <span contenteditable="true">${nombres[j]}</span></p>`;
       }
     }
 
