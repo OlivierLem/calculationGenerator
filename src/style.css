@@ -307,17 +307,24 @@ header > button:hover {
   font-size: 1.1rem;
   font-weight: 600;
 }
-.inputGroup > input[type="text"] {
+.inputGroup > input[type="number"] {
   padding-left: .3rem;
-  width: 2rem;
+  width: 2.7rem;
   font-size: .9rem;
 }
-.inputGroup > input[type="text"],
+.inputGroup > input[type="number"],
 .inputGroup > select {
   background-color: #F9E4FF;
   height: 1.5rem;
-  border: solid 1px black;
+  font-weight: 600;
+  color: #771096;
+  border: solid 1px #da83f5;
   border-radius: 3px;
+}
+
+.inputGroup:not(:nth-of-type(2)) > select {
+  width: 2.7rem;
+  text-align: center;
 }
 
 .setting > .inputGroup > .radioGroup {
@@ -388,17 +395,24 @@ input[type="radio"]:disabled::before {
 }
 .groupButton {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 1.5rem;
   width: 100%;
   margin: auto;
+  margin-top: 1rem;
 }
 .groupButton > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+  text-align: left;
   padding: .6rem 0;
   width: 7.2rem;
   border-radius: .5rem;
   font-size: .9rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   color: white;
   background-color: #da83f5;
@@ -414,9 +428,8 @@ input[type="radio"]:disabled::before {
   display: inline-block;
   width: 1rem;
   aspect-ratio: 1 / 1;
-  margin-right: .2rem;
-  padding-right: 1px;
   border-radius: 50%;
+  text-align: center;
   color: #da83f5;
   background-color: #fff;
 }

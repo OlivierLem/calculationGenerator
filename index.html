@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Fiche d'exercice de calcul</title>
     <link rel="stylesheet" href="src/style.css">
     <script src="https://kit.fontawesome.com/3f1c5e95ca.js" crossorigin="anonymous"></script>
   </head>
@@ -27,7 +27,7 @@
       <div class="setting">
         <div class="inputGroup">
           <p>Nombre d'opération :</p>
-          <input type="text" name="nOperation" required>
+          <input type="number" name="nOperation" max="500" required>
         </div>
         <div class="inputGroup">
           <p>Type d'opération :</p>
@@ -81,7 +81,7 @@
         </div>
         <div class="groupButton">
           <button type="button" class="buttonPdf disabled">Créer Pdf</button>
-          <button type="submit" class="addButton"><span><i class="fa-solid fa-plus"></i></span> Opération</button>
+          <button type="submit" class="addButton"><span><i class="fa-solid fa-plus"></i></span> Ajouter</button>
           <button type="button" class="deleteButton"><span><i class="fa-solid fa-xmark"></i></span> Supprimer</button>
         </div>
       </div>

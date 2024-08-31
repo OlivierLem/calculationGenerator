@@ -95,7 +95,7 @@ export class ContentCalcul extends HTMLElement {
           transition: opacity ease-in-out .25s;
         }
 
-        .contentCalcul:hover .buttonGroup {
+        .contentCalcul:hover .buttonGroup {s
           z-index: 100;
           opacity: 1;
           transition: opacity ease-in-out .25s;
