@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-roboto-mono: "Roboto Mono", monospace; /* ? Typo monospace pour avoir le même espace pris par les caractères */
+  --font-inter: "Inter", serif;
 }
 
 *,
@@ -13,6 +14,7 @@
 
 body {
   background-color: pink;
+  font-family: var(--font-inter);
 }
 
 header {

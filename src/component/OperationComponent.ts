@@ -66,6 +66,7 @@ export class OperationComponent extends HTMLElement {
         padding: 0 .75rem .5rem 2.5rem;
         margin: 1rem;    
         text-align: right;
+        font-family: "Roboto Mono", monospace;
         font-weight: 600;
         border-bottom: solid 2px black;
       }
