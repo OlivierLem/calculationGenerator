@@ -248,13 +248,11 @@ export class ContentCalcul extends HTMLElement {
             digit,
             limitNumber
           );
+          let checkRetenue = retenueCalc(operator, ...randomArrayNumber)
           if (
-            (setting.retenue === "avec retenue" &&
-              retenueCalc(operator, ...randomArrayNumber) === true) ||
-            (setting.retenue === "sans retenue" &&
-              retenueCalc(operator, ...randomArrayNumber) === false) ||
-            setting.retenue === "mix" ||
-            setting.retenue === undefined
+            (setting.retenue === "avec retenue" && checkRetenue === true) ||
+            (setting.retenue === "sans retenue" && checkRetenue === false) ||
+            ((setting.retenue === "mix" || setting.retenue === undefined) && checkRetenue ===true)
           ) {
             contentCalcul.innerHTML += `
               <operation-component 
@@ -274,14 +272,12 @@ export class ContentCalcul extends HTMLElement {
           contentCalcul.children[contentCalcul.children.length - 2];
         for (let i = 0; i < 1; i++) {
           let randomArrayNumber: number[] = createRandomArrayNumber(nNumber, digit, limitNumber);
+          let checkRetenue = retenueCalc(operator, ...randomArrayNumber)
 
           if (
-            (setting.retenue === "avec retenue" &&
-              retenueCalc(operator, ...randomArrayNumber) === true) ||
-            (setting.retenue === "sans retenue" &&
-              retenueCalc(operator, ...randomArrayNumber) === false) ||
-            setting.retenue === "mix" ||
-            setting.retenue === undefined
+            (setting.retenue === "avec retenue" && checkRetenue === true) ||
+            (setting.retenue === "sans retenue" && checkRetenue === false) ||
+            ((setting.retenue === "mix" || setting.retenue === undefined) && checkRetenue === true)
           ) {
             const element = createElement("div", "") as HTMLDivElement;
             element.innerHTML = `

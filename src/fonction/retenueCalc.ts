@@ -23,6 +23,7 @@ export const retenueCalc = (
     }
     return n;
   });
+
   switch (operator) {
     case "+":
       // dans une boucle on prend le 1er caractére de chaque caractère que l'on transforme en nombre

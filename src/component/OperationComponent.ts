@@ -13,33 +13,45 @@ export class OperationComponent extends HTMLElement {
     // on récupére le nombres sous une chaine de caractère est avec le délimiteur "," on créer un tableau
     let numbersString: string = this.getAttribute("numbers") ?? "0";
     let numbers: string[] = numbersString?.split(",");
-    let nDigit: number = numbers[0].length // Nombre de chiffre
+    let nDigit: number = numbers[0].length; // Nombre de chiffre
     let operator: OperatorType | undefined;
     let checkOperator: string[] = ["+", "-"]; // pour vérifier si operator posséde l'un des symbole autorisé
-    let getOperator = this.getAttribute("operator") as string; 
+    let getOperator = this.getAttribute("operator") as string;
     if (checkOperator.includes(getOperator)) {
       operator = this.getAttribute("operator") as OperatorType;
     }
-    const operationElement = createElement('div', 'operationBlock') as HTMLDivElement;
+    const operationElement = createElement(
+      "div",
+      "operationBlock"
+    ) as HTMLDivElement;
 
     // création d'élément p + span pour chaque nombres et si on est aux 2e nombre on ajoute l'opérateur dans une balise span
     for (let i = 0; i < numbers.toReversed().length; i++) {
       let number: string = numbers.toReversed()[i];
-      const numberElement = createElement('p', 'numberElement') as HTMLParagraphElement; 
-      const spanNumber = createElement('span', '', number, {'contenteditable' : 'true'}) as HTMLSpanElement;
+      const numberElement = createElement(
+        "p",
+        "numberElement"
+      ) as HTMLParagraphElement;
+      const spanNumber = createElement("span", "", number, {
+        contenteditable: "true",
+      }) as HTMLSpanElement;
       spanNumber.addEventListener("keydown", (e) => this.onKeyDown(e, nDigit));
 
-      if (i !== (numbers.toReversed().length - 1) && checkOperator?.includes(operator ?? "+")) {
+      if (
+        i !== numbers.toReversed().length - 1 &&
+        checkOperator?.includes(operator ?? "+")
+      ) {
         numberElement.innerHTML += `<span class="operatorSpan">${operator}</span>`;
       }
       if (!checkOperator?.includes(operator ?? "+")) {
-        console.error("The operator attribute must be filled in and can only be '+' or '-' ");
+        console.error(
+          "The operator attribute must be filled in and can only be '+' or '-' "
+        );
         return;
       }
-      numberElement.appendChild(spanNumber)
+      numberElement.appendChild(spanNumber);
       operationElement.insertAdjacentElement("afterbegin", numberElement);
     }
-
 
     const style: HTMLStyleElement = document.createElement("style");
     // style du composant
@@ -87,23 +99,31 @@ export class OperationComponent extends HTMLElement {
     const numberRegex: RegExp = /[0-9]/g;
     const deleteEventKey: string[] = ["Delete", "Backspace"];
     let value = e.currentTarget as HTMLSpanElement;
-    // si on utilise une touche qui n'est pas un chiffre on bloque l'action 
-    // sauf si touche de suppresion utilisé et on renvoie une erreur 
+    // si on utilise une touche qui n'est pas un chiffre on bloque l'action
+    // sauf si touche de suppresion utilisé et on renvoie une erreur
     if (!e.key.match(numberRegex) && !deleteEventKey.includes(e.key)) {
       e.preventDefault();
       console.error("Le caratère '" + e.key + "' n'est pas autorisé");
       return;
     }
 
-    // si le nombre a autant de chiffre que lors de sa création on bloque l'action  
-    // sauf si touche de suppresion utilisé et on renvoie une erreur 
-    if (value.textContent && value.textContent.length >= digit && !deleteEventKey.includes(e.key)) {
+    // si le nombre a autant de chiffre que lors de sa création on bloque l'action
+    // sauf si touche de suppresion utilisé et on renvoie une erreur
+    if (
+      value.textContent &&
+      value.textContent.length >= digit &&
+      !deleteEventKey.includes(e.key)
+    ) {
       e.preventDefault();
       console.error("trop de caractère");
       return;
     }
     // si il n'y a plus qu'1 chiffre alors on bloque l'action de supression
-    if (value.textContent && value.textContent.length === 1 && deleteEventKey.includes(e.key)) {
+    if (
+      value.textContent &&
+      value.textContent.length === 1 &&
+      deleteEventKey.includes(e.key)
+    ) {
       e.preventDefault();
       console.error("Il ne reste plus qu'un caractère");
       return;

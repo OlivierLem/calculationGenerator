@@ -22,7 +22,7 @@ const formValidate = (setting: FormType) => {
   // si on a pas de sous-titre lié au type d'opération ('addition'/'soustraction') on créer un et on l'ajoute
   if (subtitleCalc?.textContent !== setting.typeCalcul) {
     const subtitleElement = createElement("h5","subtitleCalc",setting.typeCalcul) as HTMLHeadingElement;
-    worksheet?.appendChild(subtitleElement);
+    worksheet?.children[0]?.appendChild(subtitleElement);
   }
   
   const contentCalcul = createElement('content-calcul', '', '', {
@@ -35,7 +35,7 @@ const formValidate = (setting: FormType) => {
   if(setting.retenue) {
     contentCalcul.setAttribute('retenue', setting.retenue)
   }
-  worksheet?.appendChild(contentCalcul)
+  worksheet?.children[0]?.appendChild(contentCalcul)
   toggleDisabledButton()
 };
 
