@@ -1,0 +1,20 @@
+{
+  "name": "fiche-calcul-v2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "aimless.js": "^1.0.4",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1"
+  }
+}

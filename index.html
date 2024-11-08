@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiche d'exercice de calcul</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3f1c5e95ca.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <p>Nom du fichier: <span class="nameFile">fiche de calcul.pdf</span></p>
+      <button class="editFile"><i class="fa-solid fa-pen-to-square"></i></button>
+      <div class="inputContainer">
+        <input type="text" name="changeNameFile" id="changeNameFile" placeholder="Noms du fichier" value="fiche de calcul" class="editNameFile active">
+        <span>.pdf</span>
+      </div>
+    </header>
+    <section class="worksheet">
+      <div class="page">
+        <p class="info">Date: <span></span></p>
+      </div>
+    </section>
+    <form class="generateCalcul active">
+      <button type="button" class="reductComponent"><i class="fa-solid fa-chevron-up"></i></button>
+      <h3>Création fiche de calcul</h3>
+      <div class="setting">
+        <div class="inputGroup">
+          <p>Nombre d'opération :</p>
+          <input type="number" name="nOperation" min="1" max="500" required>
+        </div>
+        <div class="inputGroup">
+          <p>Type d'opération :</p>
+          <select name="typeCalcul" id="typeCalcul">
+            <option value="addition" selected>addition</option>
+            <option value="soustraction">soustraction</option>
+          </select>
+        </div>
+        <div class="inputGroup">
+          <p>Nombre de chiffre :</p>
+          <select name="nDigit" id="nDigit">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="8">9</option>
+          </select>
+        </div>
+        <div class="inputGroup">
+          <p>Quantité de Nombre :</p>
+          <select name="nNumber" id="nNumber">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <div class="inputGroup" id="inputRetenue">
+          <p>Retenue :</p>
+          <div class="radioGroup">
+            <span>
+              <input type="radio" name="retenue" id="avecRetenue" value="avec retenue" checked>
+              <p>Avec</p>
+            </span>
+            <span>
+              <input type="radio" name="retenue" id="sansRetenue" value="sans retenue">
+              <p>Sans</p>
+            </span>
+            <span>
+              <input type="radio" name="retenue" id="mixRetenue" value="mix">
+              <p>Les deux</p>
+            </span>
+          </div>
+        </div>
+        <div class="groupButton">
+          <button type="button" class="buttonPdf disabled">Créer Pdf</button>
+          <button type="submit" class="addButton"><span><i class="fa-solid fa-plus"></i></span> Ajouter</button>
+          <button type="button" class="deleteButton"><span><i class="fa-solid fa-xmark"></i></span> Supprimer</button>
+        </div>
+      </div>
+    </form>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
